@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}College Intranet{% endblock %}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f4f6f8; margin: 0; color: #222; }
+    header { background: #1f3a5f; color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+    main { max-width: 800px; margin: 32px auto; background: #fff; padding: 24px 28px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e3e3e3; }
+    th { background: #eef2f7; }
+    input { padding: 8px; width: 100%; box-sizing: border-box; margin: 4px 0 12px; }
+    button { background: #1f3a5f; color: #fff; border: 0; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+    .error { color: #b00020; }
+    .logout-form { display: inline; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>College Intranet</strong>
+    {% block nav %}{% endblock %}
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

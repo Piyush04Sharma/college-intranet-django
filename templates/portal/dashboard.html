@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block nav %}
+  <form class="logout-form" method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+  </form>
+{% endblock %}
+{% block content %}
+  <h2>Welcome, {{ full_name }}</h2>
+  <p>Last login: {{ last_login|date:"d M Y, h:i A" }}</p>
+
+  <h3>Notices</h3>
+  <table>
+    <thead><tr><th>Title</th><th>Department</th><th>Date</th></tr></thead>
+    <tbody>
+      {% for n in notices %}
+        <tr><td>{{ n.title }}</td><td>{{ n.department }}</td><td>{{ n.date }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
